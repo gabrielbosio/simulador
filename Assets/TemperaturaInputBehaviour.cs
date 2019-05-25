@@ -5,7 +5,8 @@
         normalizadorBehaviour.CambiarTemperatura(valor);
     }
 
-    public override void ToogleVariable(bool variable)
+    public override bool CanToogleVariable(bool variable)
     {
+        return normalizadorBehaviour.ToogleTemperatura(variable);
     }
 }

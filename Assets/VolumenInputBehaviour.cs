@@ -5,8 +5,8 @@
         normalizadorBehaviour.CambiarVolumen(valor);
     }
 
-    public override void ToogleVariable(bool variable)
+    public override bool CanToogleVariable(bool variable)
     {
-        //normalizadorBehaviour.ToogleVolumen(variable);
+        return normalizadorBehaviour.ToogleVolumen(variable);
     }
 }

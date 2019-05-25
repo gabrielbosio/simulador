@@ -600,6 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximo: 10
   inputField: {fileID: 1438522753}
+  toogle: {fileID: 832764601}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,12 +1346,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2065598205}
-        m_MethodName: FijarPropiedad
-        m_Mode: 2
+      - m_Target: {fileID: 1199472947}
+        m_MethodName: ToogleVariable
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 811527726}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1448,12 +1449,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2065598205}
-        m_MethodName: FijarPropiedad
-        m_Mode: 2
+      - m_Target: {fileID: 516728343}
+        m_MethodName: ToogleVariable
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 832764599}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2147,12 +2148,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2065598205}
-        m_MethodName: FijarPropiedad
-        m_Mode: 2
+      - m_Target: {fileID: 1821379186}
+        m_MethodName: ToogleVariable
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 1131025988}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2572,6 +2573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximo: 10000
   inputField: {fileID: 598283133}
+  toogle: {fileID: 811527728}
 --- !u!1 &1264125278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,6 +3153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximo: 224
   inputField: {fileID: 1187718758}
+  toogle: {fileID: 1957363080}
 --- !u!1 &1618916293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,6 +3728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximo: 10000
   inputField: {fileID: 1112697447}
+  toogle: {fileID: 1131025990}
 --- !u!1 &1823084125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8749,12 +8753,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2065598205}
-        m_MethodName: FijarPropiedad
-        m_Mode: 2
+      - m_Target: {fileID: 1481557082}
+        m_MethodName: ToogleVariable
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 1957363078}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

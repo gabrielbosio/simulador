@@ -6,13 +6,20 @@ public abstract class InputBehaviour : MonoBehaviour
 {
     public float maximo;
     public InputField inputField;
+    public Toggle toogle;
     protected NormalizadorBehaviour normalizadorBehaviour;
 
     public void SetNormalizador(NormalizadorBehaviour normalizadorBehaviour) {
         this.normalizadorBehaviour = normalizadorBehaviour;
     }
 
-    public abstract void ToogleVariable(bool variable);
+    public abstract bool CanToogleVariable(bool variable);
+
+    public void ToogleVariable(bool variable)
+    {
+        variable = CanToogleVariable(variable);
+        toogle.isOn = variable;
+    }
 
     public abstract void ActualizarValor(float valor);
 

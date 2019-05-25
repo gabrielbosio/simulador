@@ -5,7 +5,8 @@
         normalizadorBehaviour.CambiarPresion(valor);
     }
 
-    public override void ToogleVariable(bool variable)
+    public override bool CanToogleVariable(bool variable)
     {
+        return normalizadorBehaviour.TooglePresion(variable);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Calculos estableciendo PV=NRT
@@ -23,7 +22,7 @@ using UnityEngine;
 /// </summary>
 public class NormalizadorBehaviour : MonoBehaviour
 {
-
+    private const int CANTIDAD_DE_PROPIEDADES_FIJAS_MAXIMA = 2;
     private readonly float CONSTANTE_GASES = 0.082051282f;
     public InputBehaviour presionInput;
     public InputBehaviour volumenInput;
@@ -99,6 +98,30 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarVolumen();
     }
 
+    public bool TooglePresion(bool variable)
+    {
+        presionVariable = Toogle(variable);
+        return presionVariable == 1;
+    }
+
+    public bool ToogleVolumen(bool variable)
+    {
+        volumenVariable = Toogle(variable);
+        return volumenVariable == 1;
+    }
+
+    public bool ToogleTemperatura(bool variable)
+    {
+        temperaturaVariable = Toogle(variable);
+        return temperaturaVariable == 1;
+    }
+
+    public bool ToogleMoles(bool variable)
+    {
+        molesVariable = Toogle(variable);
+        return molesVariable == 1;
+    }
+
     /// <summary>
     /// Ajusta los valores segun la variacion de otro valor
     /// </summary>
@@ -108,7 +131,7 @@ public class NormalizadorBehaviour : MonoBehaviour
     private void AjusteDelta(float valorInicial, float valorActual, bool izquierda)
     {
         float delta = valorActual / valorInicial;
-        delta = Mathf.Pow(delta, 1f / (presionVariable + volumenVariable + temperaturaVariable + molesVariable - 1));
+        delta = Mathf.Pow(delta, 1f / (CantidadVariable() - 1));
         if (izquierda)
         {
             delta = 1 / delta;
@@ -176,5 +199,22 @@ public class NormalizadorBehaviour : MonoBehaviour
     private void ActualizarParticleSystem()
     {
         gasBehaviour.ActualizarParticleSystem(presion, volumen, temperatura, moles);
+    }
+
+    private int CantidadVariable()
+    {
+        return presionVariable + volumenVariable + temperaturaVariable + molesVariable;
+    }
+
+    private int Toogle(bool variable)
+    {
+        if (!variable && CANTIDAD_DE_PROPIEDADES_FIJAS_MAXIMA < CantidadVariable())
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
     }
 }
