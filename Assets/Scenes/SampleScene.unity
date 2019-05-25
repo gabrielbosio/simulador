@@ -1114,6 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 302932959}
+  relacionPositionSize: -5
 --- !u!4 &302932961
 Transform:
   m_ObjectHideFlags: 0
@@ -2383,6 +2384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 611505711}
+  relacionPositionSize: 5
 --- !u!1 &666354013
 GameObject:
   m_ObjectHideFlags: 0
