@@ -1,50 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class TemperaturaInputBehaviour : MonoBehaviour {
-    public GameObject gas;
-    private GasBehaviour gasBehaviour;
-    private InputField inputField;
-    private float valor;
-
-    // Use this for initialization
-    void Start()
+﻿public class TemperaturaInputBehaviour : InputBehaviour
+{
+    public override void ActualizarValor(float valor)
     {
-        gasBehaviour = gas.GetComponent<GasBehaviour>();
-        inputField = GetComponent<InputField>();
+        normalizadorBehaviour.CambiarTemperatura(valor);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ToogleVariable(bool variable)
     {
-        float temperaturaGas = gasBehaviour.temperatura;
-
-        if (valor != temperaturaGas)
-        {
-            valor = temperaturaGas;
-            inputField.text = gasBehaviour.temperatura.ToString();
-        }
-
-        gasBehaviour.temperaturaFija = !inputField.enabled;
-    }
-
-    public void CambiarTemperatura(string temperatura)
-    {
-        if (temperatura.Length > 0)
-        {
-            float temperaturaParseado = Convert.ToSingle(temperatura);
-
-            if (temperaturaParseado > 0)
-            {
-                gasBehaviour.CambiarTemperatura(temperaturaParseado);
-            }
-            else
-            {
-                inputField.text = valor.ToString();
-            }
-        }
     }
 }

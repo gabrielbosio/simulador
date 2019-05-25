@@ -25,6 +25,6 @@ public class CameraBehaviour : MonoBehaviour {
         }
 
         transform.Translate(Vector3.forward * speed);
-        Debug.Log(transform.localPosition);
+        //Debug.Log(transform.localPosition);
 	}
 }

@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GasBehaviour : MonoBehaviour {
+public class GasBehaviour : MonoBehaviour
+{
     private const float CONSTANTE_GASES = 0.082f;
     public float presion;
     public float volumen;
@@ -15,13 +14,15 @@ public class GasBehaviour : MonoBehaviour {
     public bool molesFijo = false;
 
     // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void CambiarPresion(float presion)
     {
@@ -45,7 +46,7 @@ public class GasBehaviour : MonoBehaviour {
         ActualizarPresion();
         ActualizarVolumen();
         ActualizarTemperatura();
-        ActualizarParticleSystem();
+        ActualizarParticleSystem(0,0,0,0);
     }
 
     public void CambiarTemperatura(float temperatura)
@@ -69,7 +70,7 @@ public class GasBehaviour : MonoBehaviour {
         if (!molesFijo)
         {
             moles = Convert.ToSingle(presion * volumen / (CONSTANTE_GASES * temperatura));
-            ActualizarParticleSystem();
+            ActualizarParticleSystem(0,0,0,0);
         }
     }
 
@@ -86,11 +87,11 @@ public class GasBehaviour : MonoBehaviour {
         if (!volumenFijo)
         {
             volumen = moles * CONSTANTE_GASES * temperatura / presion;
-            GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
+            //GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
         }
     }
 
-    private void ActualizarParticleSystem()
+    public void ActualizarParticleSystem(float presion, float volumen, float temperatura, float moles)
     {
         ParticleSystem particleSystem = gameObject.GetComponent<ParticleSystem>();
         ParticleSystem.Burst[] nuevoBurst = new ParticleSystem.Burst[particleSystem.emission.burstCount];

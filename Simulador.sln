@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulador", "Assembly-CSharp.csproj", "{9F414975-6244-D4B5-9187-7204217B279B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simulador", "Assembly-CSharp.csproj", "{2C5983A8-635B-53A5-940A-91147C058892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9F414975-6244-D4B5-9187-7204217B279B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F414975-6244-D4B5-9187-7204217B279B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F414975-6244-D4B5-9187-7204217B279B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F414975-6244-D4B5-9187-7204217B279B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5983A8-635B-53A5-940A-91147C058892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5983A8-635B-53A5-940A-91147C058892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5983A8-635B-53A5-940A-91147C058892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5983A8-635B-53A5-940A-91147C058892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
