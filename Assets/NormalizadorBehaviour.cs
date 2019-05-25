@@ -108,7 +108,7 @@ public class NormalizadorBehaviour : MonoBehaviour
     private void AjusteDelta(float valorInicial, float valorActual, bool izquierda)
     {
         float delta = valorActual / valorInicial;
-        delta = Mathf.Pow(delta, 1 / (presionVariable + volumenVariable + temperaturaVariable + molesVariable - 1));
+        delta = Mathf.Pow(delta, 1f / (presionVariable + volumenVariable + temperaturaVariable + molesVariable - 1));
         if (izquierda)
         {
             delta = 1 / delta;
@@ -123,11 +123,11 @@ public class NormalizadorBehaviour : MonoBehaviour
         }
         if (temperaturaVariable == 1)
         {
-            presion /= delta;
+            temperatura /= delta;
         }
         if (molesVariable == 1)
         {
-            presion /= delta;
+            moles /= delta;
         }
     }
 
@@ -136,6 +136,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         if (presionVariable == 1)
         {
             presion = moles * CONSTANTE_GASES * temperatura / volumen;
+            presion = presionInput.CambiarValor(presion);
         }
     }
 
@@ -143,7 +144,8 @@ public class NormalizadorBehaviour : MonoBehaviour
     {
         if (molesVariable == 1)
         {
-            moles = Convert.ToSingle(presion * volumen / (CONSTANTE_GASES * temperatura));
+            moles = presion * volumen / (CONSTANTE_GASES * temperatura);
+            moles = molesInput.CambiarValor(moles);
             ActualizarParticleSystem();
         }
     }
@@ -153,6 +155,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         if (temperaturaVariable == 1)
         {
             temperatura = presion * volumen / (moles * CONSTANTE_GASES);
+            temperatura = temperaturaInput.CambiarValor(temperatura);
         }
     }
 
@@ -161,6 +164,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         if (volumenVariable == 1)
         {
             volumen = moles * CONSTANTE_GASES * temperatura / presion;
+            volumen = volumenInput.CambiarValor(volumen);
             //GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
 
             //contenedor.transform.localScale = escalaInicialContenedor * volumen / valorInicial;
