@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ContainerBehaviour : MonoBehaviour
 {
@@ -7,10 +6,10 @@ public class ContainerBehaviour : MonoBehaviour
 
     public void ActualizarVolumen(float volumen)
     {
-            //GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
+        //GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
 
-            //contenedor.transform.localScale = escalaInicialContenedor * volumen / valorInicial;
-            //gasParticleSystem.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
-            //gasParticleSystem.Play();
+        //contenedor.transform.localScale = escalaInicialContenedor * volumen / valorInicial;
+        //gasParticleSystem.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+        //gasParticleSystem.Play();
     }
 }

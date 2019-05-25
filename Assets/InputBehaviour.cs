@@ -9,7 +9,8 @@ public abstract class InputBehaviour : MonoBehaviour
     public Toggle toogle;
     protected NormalizadorBehaviour normalizadorBehaviour;
 
-    public void SetNormalizador(NormalizadorBehaviour normalizadorBehaviour) {
+    public void SetNormalizador(NormalizadorBehaviour normalizadorBehaviour)
+    {
         this.normalizadorBehaviour = normalizadorBehaviour;
     }
 

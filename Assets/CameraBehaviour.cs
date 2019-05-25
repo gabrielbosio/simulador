@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraBehaviour : MonoBehaviour {
+public class CameraBehaviour : MonoBehaviour
+{
     private const int Z_MINIMO = 10;
     private const int Z_MAXIMO = 200;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         int speed = 0;
 
         if (Input.GetKey(KeyCode.UpArrow) && transform.position.z > Z_MINIMO)
@@ -25,6 +19,5 @@ public class CameraBehaviour : MonoBehaviour {
         }
 
         transform.Translate(Vector3.forward * speed);
-        //Debug.Log(transform.localPosition);
-	}
+    }
 }
