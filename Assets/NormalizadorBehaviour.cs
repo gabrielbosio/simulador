@@ -29,6 +29,7 @@ public class NormalizadorBehaviour : MonoBehaviour
     public InputBehaviour temperaturaInput;
     public InputBehaviour molesInput;
     public GasBehaviour gasBehaviour;
+    public ContainerBehaviour containerBehaviour;
 
     private float presion = 1f;
     private float volumen = 22.4f;
@@ -41,7 +42,6 @@ public class NormalizadorBehaviour : MonoBehaviour
     private int temperaturaVariable = 1;
     private int molesVariable = 1;
 
-    // Use this for initialization
     void Start()
     {
         presionInput.SetNormalizador(this);
@@ -54,20 +54,14 @@ public class NormalizadorBehaviour : MonoBehaviour
         molesInput.CambiarValor(moles);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public float CambiarPresion(float presion)
+    public void CambiarPresion(float presion)
     {
         AjusteDelta(this.presion, presion, true);
         this.presion = presion;
         ActualizarMoles();
         ActualizarVolumen();
         ActualizarTemperatura();
-        return presion;
+        ActualizarEntorno();
     }
 
     public void CambiarVolumen(float volumen)
@@ -77,6 +71,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarMoles();
         ActualizarPresion();
         ActualizarTemperatura();
+        ActualizarEntorno();
     }
 
     public void CambiarMoles(float moles)
@@ -86,7 +81,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarPresion();
         ActualizarVolumen();
         ActualizarTemperatura();
-        ActualizarParticleSystem();
+        ActualizarEntorno();
     }
 
     public void CambiarTemperatura(float temperatura)
@@ -96,6 +91,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarMoles();
         ActualizarPresion();
         ActualizarVolumen();
+        ActualizarEntorno();
     }
 
     public bool TooglePresion(bool variable)
@@ -169,7 +165,6 @@ public class NormalizadorBehaviour : MonoBehaviour
         {
             moles = presion * volumen / (CONSTANTE_GASES * temperatura);
             moles = molesInput.CambiarValor(moles);
-            ActualizarParticleSystem();
         }
     }
 
@@ -188,17 +183,13 @@ public class NormalizadorBehaviour : MonoBehaviour
         {
             volumen = moles * CONSTANTE_GASES * temperatura / presion;
             volumen = volumenInput.CambiarValor(volumen);
-            //GameObject.Find("VolumenInput").GetComponent<VolumenInputBehaviour>().ActualizarContenedor(volumen);
-
-            //contenedor.transform.localScale = escalaInicialContenedor * volumen / valorInicial;
-            //gasParticleSystem.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
-            //gasParticleSystem.Play();
         }
     }
 
-    private void ActualizarParticleSystem()
+    private void ActualizarEntorno()
     {
         gasBehaviour.ActualizarParticleSystem(presion, volumen, temperatura, moles);
+        //containerBehaviour.ActualizarVolumen(volumen);
     }
 
     private int CantidadVariable()

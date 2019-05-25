@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{9F414975-6244-D4B5-9187-7204217B279B}</ProjectGuid>
+    <ProjectGuid>{2C5983A8-635B-53A5-940A-91147C058892}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,8 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraBehaviour.cs" />
+    <Compile Include="Assets\ContainerBehaviour.cs" />
     <Compile Include="Assets\GasBehaviour.cs" />
-    <Compile Include="Assets\GestorDeTogglesBehaviour.cs" />
     <Compile Include="Assets\InputBehaviour.cs" />
     <Compile Include="Assets\MolesInputBehaviour.cs" />
     <Compile Include="Assets\NormalizadorBehaviour.cs" />
