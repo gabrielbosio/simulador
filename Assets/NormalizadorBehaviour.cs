@@ -189,7 +189,7 @@ public class NormalizadorBehaviour : MonoBehaviour
     private void ActualizarEntorno()
     {
         gasBehaviour.ActualizarParticleSystem(presion, volumen, temperatura, moles);
-        //containerBehaviour.ActualizarVolumen(volumen);
+        containerBehaviour.ActualizarVolumen(volumen);
     }
 
     private int CantidadVariable()
