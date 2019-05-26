@@ -31,10 +31,10 @@ public class NormalizadorBehaviour : MonoBehaviour
     public GasBehaviour gasBehaviour;
     public ContainerBehaviour containerBehaviour;
 
-    private float presion = 1f;
-    private float volumen = 22.4f;
-    private float temperatura = 273f;
-    private float moles = 1f;
+    public float presion = 1f;
+    public float volumen = 22.4f;
+    public float temperatura = 273f;
+    public float moles = 1f;
 
     // Cero es fijo uno es variable, para el ajuste acorde a la cantidad de variables
     private int presionVariable = 1;
