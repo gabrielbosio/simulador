@@ -22,8 +22,8 @@
 /// </summary>
 public class NormalizadorBehaviour : MonoBehaviour
 {
-    private const int CANTIDAD_DE_PROPIEDADES_FIJAS_MAXIMA = 2;
-    private readonly float CONSTANTE_GASES = 0.082051282f;
+    public static readonly int CANTIDAD_DE_PROPIEDADES_FIJAS_MAXIMA = 2;
+    public static readonly float CONSTANTE_GASES = 0.082051282f;
     public InputBehaviour presionInput;
     public InputBehaviour volumenInput;
     public InputBehaviour temperaturaInput;
