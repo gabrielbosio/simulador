@@ -23,7 +23,7 @@ public class ContainerBehaviour : MonoBehaviour
         tabique.SetActive(activado);
         if (!activado)
         {
-            float size = tabique.transform.localScale.x;
+            float size = this.transform.localScale.x;
             bool subtabiques = size > sizeAdyacente;
             tabiqueSuperior.SetActive(subtabiques);
             tabiqueInferior.SetActive(subtabiques);
