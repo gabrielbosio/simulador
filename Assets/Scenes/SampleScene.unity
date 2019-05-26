@@ -6352,6 +6352,7 @@ MonoBehaviour:
   molesInput: {fileID: 1678202262}
   gasBehaviour: {fileID: 1721187129}
   containerBehaviour: {fileID: 302932960}
+  tabiquesBehaviour: {fileID: 1372978201}
   presion: 1
   volumen: 22.4
   temperatura: 273
@@ -6566,7 +6567,6 @@ MonoBehaviour:
   containerDerecha: {fileID: 302932960}
   normalizadorIzquierda: {fileID: 1660849699}
   normalizadorDerecha: {fileID: 1319847116}
-  textoBoton: {fileID: 0}
   contenedorTextos: {fileID: 17645276}
   textoPresion: {fileID: 2070392029}
   textoVolumen: {fileID: 1926739409}
@@ -7794,6 +7794,7 @@ MonoBehaviour:
   molesInput: {fileID: 516728343}
   gasBehaviour: {fileID: 1823084129}
   containerBehaviour: {fileID: 611505713}
+  tabiquesBehaviour: {fileID: 1372978201}
   presion: 1
   volumen: 22.4
   temperatura: 273

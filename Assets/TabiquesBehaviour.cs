@@ -7,17 +7,16 @@ public class TabiquesBehaviour : MonoBehaviour
     public ContainerBehaviour containerDerecha;
     public NormalizadorBehaviour normalizadorIzquierda;
     public NormalizadorBehaviour normalizadorDerecha;
-    public Text textoBoton;
     public GameObject contenedorTextos;
     public Text textoPresion;
     public Text textoVolumen;
     public Text textoTemperatura;
     public Text textoMoles;
-    private bool activado = false;
+    private bool activado = true;
 
     void Start()
     {
-        contenedorTextos.SetActive(activado);
+        contenedorTextos.SetActive(!activado);
     }
 
     public void ActivarTabique()
@@ -29,6 +28,17 @@ public class TabiquesBehaviour : MonoBehaviour
         if (!activado)
         {
             CalcularTotales();
+        }
+    }
+
+    public void Actualizar()
+    {
+        if (!activado)
+        {
+            activado = !activado;
+            ActivarTabique();
+            normalizadorDerecha.ActualizarEntorno();
+            normalizadorIzquierda.ActualizarEntorno();
         }
     }
 

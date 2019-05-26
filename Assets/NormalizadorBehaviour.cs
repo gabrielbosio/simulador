@@ -30,6 +30,7 @@ public class NormalizadorBehaviour : MonoBehaviour
     public InputBehaviour molesInput;
     public GasBehaviour gasBehaviour;
     public ContainerBehaviour containerBehaviour;
+    public TabiquesBehaviour tabiquesBehaviour;
 
     public float presion = 1f;
     public float volumen = 22.4f;
@@ -62,6 +63,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarVolumen();
         ActualizarTemperatura();
         ActualizarEntorno();
+        tabiquesBehaviour.Actualizar();
     }
 
     public void CambiarVolumen(float volumen)
@@ -72,6 +74,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarPresion();
         ActualizarTemperatura();
         ActualizarEntorno();
+        tabiquesBehaviour.Actualizar();
     }
 
     public void CambiarMoles(float moles)
@@ -82,6 +85,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarVolumen();
         ActualizarTemperatura();
         ActualizarEntorno();
+        tabiquesBehaviour.Actualizar();
     }
 
     public void CambiarTemperatura(float temperatura)
@@ -92,6 +96,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarPresion();
         ActualizarVolumen();
         ActualizarEntorno();
+        tabiquesBehaviour.Actualizar();
     }
 
     public bool TooglePresion(bool variable)
@@ -116,6 +121,12 @@ public class NormalizadorBehaviour : MonoBehaviour
     {
         molesVariable = Toogle(variable);
         return molesVariable == 1;
+    }
+
+    public void ActualizarEntorno()
+    {
+        gasBehaviour.ActualizarParticleSystem(presion, volumen, temperatura, moles);
+        containerBehaviour.ActualizarVolumen(volumen);
     }
 
     /// <summary>
@@ -184,12 +195,6 @@ public class NormalizadorBehaviour : MonoBehaviour
             volumen = moles * CONSTANTE_GASES * temperatura / presion;
             volumen = volumenInput.CambiarValor(volumen);
         }
-    }
-
-    private void ActualizarEntorno()
-    {
-        gasBehaviour.ActualizarParticleSystem(presion, volumen, temperatura, moles);
-        containerBehaviour.ActualizarVolumen(volumen);
     }
 
     private int CantidadVariable()
