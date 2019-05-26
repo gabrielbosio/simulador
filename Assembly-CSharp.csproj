@@ -68,6 +68,7 @@
     <Compile Include="Assets\MolesInputBehaviour.cs" />
     <Compile Include="Assets\NormalizadorBehaviour.cs" />
     <Compile Include="Assets\PresionInputBehaviour.cs" />
+    <Compile Include="Assets\TabiquesBehaviour.cs" />
     <Compile Include="Assets\TemperaturaInputBehaviour.cs" />
     <Compile Include="Assets\VolumenInputBehaviour.cs" />
     <Reference Include="UnityEditor.StandardEvents">
