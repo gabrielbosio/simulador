@@ -6566,6 +6566,7 @@ MonoBehaviour:
   containerDerecha: {fileID: 302932960}
   normalizadorIzquierda: {fileID: 1660849699}
   normalizadorDerecha: {fileID: 1319847116}
+  textoBoton: {fileID: 0}
   contenedorTextos: {fileID: 17645276}
   textoPresion: {fileID: 2070392029}
   textoVolumen: {fileID: 1926739409}
@@ -6612,7 +6613,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1372978201}
         m_MethodName: ActivarTabique
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18266,7 +18267,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ActivarTabiques
+  m_Text: Activar Tabiques
 --- !u!222 &1943437539
 CanvasRenderer:
   m_ObjectHideFlags: 0

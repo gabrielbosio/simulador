@@ -7,19 +7,22 @@ public class TabiquesBehaviour : MonoBehaviour
     public ContainerBehaviour containerDerecha;
     public NormalizadorBehaviour normalizadorIzquierda;
     public NormalizadorBehaviour normalizadorDerecha;
+    public Text textoBoton;
     public GameObject contenedorTextos;
     public Text textoPresion;
     public Text textoVolumen;
     public Text textoTemperatura;
     public Text textoMoles;
+    private bool activado = false;
 
     void Start()
     {
-        contenedorTextos.SetActive(false);
+        contenedorTextos.SetActive(activado);
     }
 
-    public void ActivarTabique(bool activado)
+    public void ActivarTabique()
     {
+        activado = !activado;
         containerIzquierda.ActivarTabique(activado, containerDerecha.transform.localScale.x);
         containerDerecha.ActivarTabique(activado, containerIzquierda.transform.localScale.x);
         contenedorTextos.SetActive(!activado);
