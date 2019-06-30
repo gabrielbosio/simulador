@@ -27,7 +27,7 @@ public class GasBehaviour : MonoBehaviour
         shapeModule.radius = relacionVolumenRadio * volumen;
         ParticleSystem.Burst[] nuevoBurst = new ParticleSystem.Burst[gas.emission.burstCount];
         gas.emission.GetBursts(nuevoBurst);
-        nuevoBurst[0].count = esferasPorMol * moles;
+        nuevoBurst[0].count = Mathf.Ceil(esferasPorMol * moles);
         gas.emission.SetBursts(nuevoBurst);
         gas.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
         gas.Play();
