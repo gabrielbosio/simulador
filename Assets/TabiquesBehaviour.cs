@@ -8,6 +8,8 @@ public class TabiquesBehaviour : MonoBehaviour
     public NormalizadorBehaviour normalizadorIzquierda;
     public NormalizadorBehaviour normalizadorDerecha;
     public GameObject contenedorTextos;
+    public GameObject gasIzquierda;
+    public GameObject gasDerecha;
     public Text textoPresion;
     public Text textoVolumen;
     public Text textoTemperatura;
@@ -25,7 +27,16 @@ public class TabiquesBehaviour : MonoBehaviour
         containerIzquierda.ActivarTabique(activado, containerDerecha.transform.localScale.x);
         containerDerecha.ActivarTabique(activado, containerIzquierda.transform.localScale.x);
         contenedorTextos.SetActive(!activado);
-        if (!activado)
+        if (activado)
+        {
+            ParticleSystem particleSystemDerecha = gasDerecha.GetComponent<ParticleSystem>();
+            ParticleSystem particleSystemIzquierda = gasIzquierda.GetComponent<ParticleSystem>();
+            particleSystemDerecha.Clear();
+            particleSystemDerecha.Play();
+            particleSystemIzquierda.Clear();
+            particleSystemIzquierda.Play();
+        }
+        else
         {
             CalcularTotales();
         }
