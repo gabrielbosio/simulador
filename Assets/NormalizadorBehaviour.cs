@@ -62,6 +62,7 @@ public class NormalizadorBehaviour : MonoBehaviour
         ActualizarMoles();
         ActualizarVolumen();
         ActualizarTemperatura();
+        ActualizarPresion();
         ActualizarEntorno();
         tabiquesBehaviour.Actualizar();
     }
@@ -71,8 +72,8 @@ public class NormalizadorBehaviour : MonoBehaviour
         AjusteDelta(this.volumen, volumen, true);
         this.volumen = volumen;
         ActualizarMoles();
-        ActualizarPresion();
         ActualizarTemperatura();
+        ActualizarPresion();
         ActualizarEntorno();
         tabiquesBehaviour.Actualizar();
     }
@@ -81,9 +82,9 @@ public class NormalizadorBehaviour : MonoBehaviour
     {
         AjusteDelta(this.moles, moles, false);
         this.moles = moles;
-        ActualizarPresion();
         ActualizarVolumen();
         ActualizarTemperatura();
+        ActualizarPresion();
         ActualizarEntorno();
         tabiquesBehaviour.Actualizar();
     }
@@ -93,8 +94,8 @@ public class NormalizadorBehaviour : MonoBehaviour
         AjusteDelta(this.temperatura, temperatura, false);
         this.temperatura = temperatura;
         ActualizarMoles();
-        ActualizarPresion();
         ActualizarVolumen();
+        ActualizarPresion();
         ActualizarEntorno();
         tabiquesBehaviour.Actualizar();
     }

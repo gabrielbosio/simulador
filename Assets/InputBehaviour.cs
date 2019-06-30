@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public abstract class InputBehaviour : MonoBehaviour
 {
+    public float minimo;
     public float maximo;
     public InputField inputField;
     public Toggle toogle;
@@ -35,7 +36,7 @@ public abstract class InputBehaviour : MonoBehaviour
 
     public float CambiarValor(float valor)
     {
-        valor = Mathf.Max(0, Mathf.Min(valor, maximo));
+        valor = Mathf.Max(minimo, Mathf.Min(valor, maximo));
         inputField.text = valor.ToString();
         return valor;
     }
